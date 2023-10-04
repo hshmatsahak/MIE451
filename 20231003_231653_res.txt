@@ -1,0 +1,1 @@
+Q4 MAP [Q4 MAP for all]: True {MAP score is: 0.206054. Runtime is: 83.35s}
