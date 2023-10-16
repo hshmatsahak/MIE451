@@ -1,0 +1,1 @@
+Q7_MODEL_AP [build model and features for optimal average precision]: True {average precision score is: 0.866241. Runtime is: 15.31s}
