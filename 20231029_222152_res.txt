@@ -1,0 +1,8 @@
+[0.5] CUSTOMIZED SIMILARITY CORRECT [check customized similarity implementation]: True {0.5}
+[0.5] DATAPREPROCESSOR CORRECT [check dataPreprocessor implementation]: True {0.5}
+[0.5] EUCLIDEAN SIMILARITY CORRECT [check euclidean similarity implementation]: True {0.5}
+[0.75] ITEM SIMILARITY CORRECT [check item similarity model implementation]: True {0.75}
+[0.5] POPULARITY CORRECT [check popularity model implementation]: True {0.5}
+[0.5] USER AVERAGE CORRECT [check user average model implementation]: True {0.5}
+[0.75] USER SIMILARITY CORRECT [check user similarity model implementation]: True {0.75}
+NOTEBOOK EXISTS [Notebook with the correct name exists (not graded)]: True {0}
