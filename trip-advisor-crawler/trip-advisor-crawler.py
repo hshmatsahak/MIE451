@@ -50,7 +50,7 @@ def getactivityids(domain, activitytype, locationid, timeout, maxretries, pause)
     oastep = 30
     activityids = set()
     citypage = 0
-    activityre = re.compile(r'/'+activitytype+'_Review-g([0-9]+)-d([0-9]+)-Reviews')
+    activityre = re.compile(r'/'+activitytype+'_Review-g('+locationid+')-d([0-9]+)-Reviews')
 
     while True:
         if citypage == 0:
@@ -199,13 +199,14 @@ def main():
                     reviewids = getreviewids(domain, args.activity, activitylocationid, activityid, args.timeout, args.maxretries,
                                              args.maxreviews,
                                              args.pause)
-                for reviewid in sorted(reviewids):
-                    print('downloading: ', ':'.join((domain, locationid, activitylocationid, activityid, reviewid)))
-                    file.write(':'.join((domain, locationid, activitylocationid, activityid, reviewid)))
-                    file.write('\n')
-                    getreview(domain, activitylocationid, activityid, reviewid, args.timeout, args.maxretries, basepath,
-                              args.force,
-                              args.pause)
+                if len(reviewids) >= 50:
+                    for reviewid in sorted(reviewids):
+                        print('downloading: ', ':'.join((domain, locationid, activitylocationid, activityid, reviewid)))
+                        file.write(':'.join((domain, locationid, activitylocationid, activityid, reviewid)))
+                        file.write('\n')
+                        getreview(domain, activitylocationid, activityid, reviewid, args.timeout, args.maxretries, basepath,
+                                args.force,
+                                args.pause)
 
 
 if __name__ == '__main__':
